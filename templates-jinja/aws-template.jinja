@@ -1,0 +1,32 @@
+{
+	"name": "{{ data['Name'] }}",
+	"total_cost": "{{ data['Total Cost']['monthly'] }}",
+	"metadata_share_url": "{{ data['Metadata']['Share Url'] }}",
+	{%- if data.Groups is defined and data.Groups -%}
+		{# Iteration over the data.Groups #}	
+		
+		{%- for groupName, group in data.Groups.items() %}
+	"relationship_{{ groupName }}": 
+		[ {#- Iteration over the data.Groups.<groupName>.Services #}						
+			{%- set comma = joiner(",") -%}
+			{%- set totalCost = [0.0] -%}
+			{%- if group.Services is defined and group.Services -%}
+				{%- for service in group.Services | sort(attribute="Service Name") %}
+			{#- Attributes to include per record in the table #}
+			{{- comma() }}
+			{
+				"id": "{{ loop.index }}",
+				"service_name": "{{ service['Service Name'] }}",
+				"description": "{{ service['Description'] }}",
+				"service_cost_12_months": "{{ "{:,.2f}".format(service['Service Cost']['12 months'] | float) }}"
+				{%- set totalCost = totalCost.append(totalCost.pop() + service['Service Cost']['12 months'] | float)  %}
+			}
+				{%- endfor %}
+		],	
+	"total_{{ groupName }}" : "{{ "{:,.2f}".format(totalCost.pop()) }}",
+			{%- endif %}
+		{%- endfor %}
+	{% endif -%}
+
+	"end" : "end"
+}

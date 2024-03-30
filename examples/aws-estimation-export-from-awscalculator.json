@@ -1,0 +1,125 @@
+{
+	"Name": "TEST",
+	"Total Cost1": "aaaa",
+	"Total Cost": {
+		"monthly": "14786.10",
+		"upfront": "0.00",
+		"12 months": "177433.20"
+	},
+	"Metadata": {
+		"Currency": "USD",
+		"Locale": "en_US",
+		"Created On": "3/27/2024",
+		"Legal Disclaimer": "AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",
+		"Share Url": "https://calculator.aws/#/estimate?id=2d9fdfe33efc7d01cb56d124a16a06b41574b602"
+	},
+	"Groups": {
+		"DEV": {
+			"Services": [
+				{
+					"Service Name": "Amazon EC2 ",
+					"Description": "desc-ec2",
+					"Region": "US East (Ohio)",
+					"Status": "",
+					"Service Cost": {
+						"monthly": "10949.09",
+						"upfront": "0.00",
+						"12 months": "131389.08"
+					},
+					"Properties": {
+						"Tenancy": "Shared Instances",
+						"Operating system": "Linux",
+						"Workload": "Consistent, Number of instances: 1",
+						"Advance EC2 instance": "p4d.24xlarge",
+						"Pricing strategy": "3yr  No Upfront",
+						"Enable monitoring": "disabled",
+						"DT Inbound: Not selected": "0 TB per month",
+						"DT Outbound: Not selected": "0 TB per month",
+						"DT Intra-Region:": "0 TB per month"
+					}
+				},
+				{
+					"Service Name": "Amazon API Gateway",
+					"Description": "desc-apigateway",
+					"Region": "Europe (Ireland)",
+					"Status": "",
+					"Service Cost": {
+						"monthly": "111.00",
+						"upfront": "0.00",
+						"12 months": "1332.00"
+					},
+					"Properties": {
+						"REST API request units": "millions",
+						"Cache memory size (GB)": "None",
+						"WebSocket message units": "thousands",
+						"HTTP API requests units": "millions",
+						"Average size of each request": "34 KB",
+						"Average message size": "32 KB",
+						"Requests": "100 per month"
+					}
+				}
+			]
+		},
+		"PRE": {
+			"Services": [
+				{
+					"Service Name": "Amazon API Gateway",
+					"Description": "desc-apigateway",
+					"Region": "Europe (Ireland)",
+					"Status": "",
+					"Service Cost": {
+						"monthly": "3705.04",
+						"upfront": "0.00",
+						"12 months": "44460.48"
+					},
+					"Properties": {
+						"REST API request units": "millions",
+						"Cache memory size (GB)": "None",
+						"WebSocket message units": "thousands",
+						"HTTP API requests units": "millions",
+						"Average size of each request": "34 KB",
+						"Requests": "1111 per month",
+						"Average message size": "32 KB"
+					}
+				},
+				{
+					"Service Name": "Amazon EC2 ",
+					"Description": "desc-ec2-PRE",
+					"Region": "US East (Ohio)",
+					"Status": "",
+					"Service Cost": {
+						"monthly": "6.13",
+						"upfront": "0.00",
+						"12 months": "73.58"
+					},
+					"Properties": {
+						"Tenancy": "Shared Instances",
+						"Operating system": "Linux",
+						"Workload": "Consistent, Number of instances: 1",
+						"Advance EC2 instance": "t4g.small",
+						"Pricing strategy": "3yr  No Upfront",
+						"Enable monitoring": "disabled",
+						"DT Inbound: Not selected": "0 TB per month",
+						"DT Outbound: Not selected": "0 TB per month",
+						"DT Intra-Region:": "0 TB per month"
+					}
+				},
+				{
+					"Service Name": "Amazon Athena",
+					"Description": "desc-athena-pre",
+					"Region": "Europe (Ireland)",
+					"Status": "",
+					"Service Cost": {
+						"monthly": "14.84",
+						"upfront": "0.00",
+						"12 months": "178.08"
+					},
+					"Properties": {
+						"Total number of queries": "10 per day",
+						"Amount of data scanned per query": "10 GB"
+					}
+				}
+			]
+		}
+	}
+}
